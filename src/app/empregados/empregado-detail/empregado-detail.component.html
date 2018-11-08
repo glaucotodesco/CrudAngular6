@@ -1,0 +1,34 @@
+<h2 class="text-center">{{empFormLabel}}</h2>
+<div class="col-md-6">
+  <form>
+    <div class="form-group">
+      <label for="empId">Empregado Id:</label>
+      <input type="number" [(ngModel)]="empregado.id" placeholder="Id" name="empId" class="form-control" id="empId">
+    </div>
+
+    <div class="form-group">
+    <label for="empName">Nome do Empregado:</label>
+    <input [(ngModel)]="empregado.nome" placeholder="Nome do Empregado" name="empNome" class="form-control" id="empNome">
+    </div>
+
+    <div class="form-group">
+      <label for="empFuncao">Função do Empregado:</label>
+      <input [(ngModel)]="empregado.funcao" placeholder="Funcao do Empregado" name="empFuncao" class="form-control" id="empFuncao">
+    </div>
+
+    <div class="form-group">
+      <label for="empSalario">Salário do Empregado:</label>
+      <input  type="number"  [(ngModel)]="empregado.salario" placeholder="0.00" name="empSalario" class="form-control" id="empSalario" >
+    </div>
+
+    <div class="form-group">
+      <label for="empDataAdm">Data de Admissão:</label>
+      <input type="date"  [(ngModel)]="empregado.dataAdmissao" placeholder="dd/mm/aaaa" name="empDataAdm" class="form-control" id="empDataAdm" >
+    </div>
+
+
+    <button type="button" class="btn btn-success" *ngIf="btnVisibility" (click)="onSubmit()">Salvar</button>
+    <button type="button" class="btn btn-success" *ngIf="!btnVisibility" (click)="onUpdate()">Atualizar</button>
+
+ </form>
+</div>

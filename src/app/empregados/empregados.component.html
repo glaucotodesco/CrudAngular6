@@ -1,0 +1,37 @@
+<app-empregado-detail [empregado]="empregadoAtual"  (emissor) = "empregadoEvent($event)" *ngIf="showForm == true">
+</app-empregado-detail>
+<div *ngIf="showForm == false">
+<h2 class="text-center">Lista de empregados</h2>
+<button (click)="novoEmpregado()" class="btn btn-primary">Novo Empregado </button>
+<div class="col-md-12">
+  <div class="table-responsive table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Função</th>
+        <th>Salário</th>
+        <th>Data Admissão</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of empregados">
+        <td class="hidden">{{emp.id}}</td>
+        <td>{{emp.nome}}</td>
+        <td>{{emp.funcao}}</td>
+        <td>{{emp.salario}}</td>
+        <td>{{emp.dataAdmissao | date : 'dd/MM/yyyy'}}</td>
+        <td>
+          <button (click)="deleteEmpregado(emp)"   class="btn btn-primary">Remover</button>
+          <button (click)="editEmpregado(emp) "style="margin-left: 20px;" class="btn btn-primary"> Editar</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+

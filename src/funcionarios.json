@@ -1,0 +1,11 @@
+{
+  "funcionarios": [
+    {
+      "id": 4,
+      "nome": "422",
+      "funcao": "4sss",
+      "salario": 422221,
+      "dataAdmissao": "2018-11-23"
+    }
+  ]
+}
